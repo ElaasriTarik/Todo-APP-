@@ -1,0 +1,262 @@
+:root {
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(233, 14%, 35%);
+  --vary-dark-grayish-blue: hsl(235, 19%, 35%);
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+  --very-dark-desataured-blue: hsl(235, 24%, 19%);
+}
+* {
+  box-sizing: border-box;
+  font-family: Trebuchet MS, Josefin Sans, monospace;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--very-dark-blue);
+
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 80px;
+
+}
+main .image {
+  width: 100%;
+  height: 170px;
+  background-image: url('/images/bg-mobile-dark.jpg');
+  background-size: cover;
+  background-position: center;
+}
+main .everything {
+  position: absolute;
+  top: 10%;
+  width: 85%;
+}
+main .titleAndTime {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20px;
+  margin-left: 0;
+  font-family: monospace;
+  letter-spacing: 8px;
+  font-size: 15px;
+  color: var(--very-light-gray);
+  position: relative;
+  top: -25px;
+}
+.titleAndTime img {
+  width: 20px;
+}
+main .everything .typing {
+  margin-top: 20px;
+  width: 100%;
+  height: 45px;
+  background-color: var(--vary-dark-grayish-blue);
+  border-radius: 5px;
+  position: relative;
+}
+main .everything .typing input {
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  border: 0;
+  background-color: var(--very-dark-desataured-blue);
+  padding-left: 35px;
+  border-radius: 5px;
+  color: var(--light-grayish-blue);
+}
+main .everything .typing .inputCheckBox {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--dark-grayish-blue);
+  position: absolute;
+  left: 10px;
+  top: 14px;
+}
+.everything .todos {
+  width: 100%;
+  height: 375px;
+  background-color: var(--very-dark-desataured-blue);
+  position: relative;
+  margin-top: 15px;
+  border-radius: 5px;
+  overflow: auto;
+}
+.everything .todos .todo {
+  width: 100%;
+  min-height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 1px 0.5px var(--dark-grayish-blue);
+  position: relative;
+  float: right;
+
+}
+.everything .todos .todo p {
+  width: 70%;
+  color: var(--light-grayish-blue);
+
+}
+.everything .todos .todo img{
+position: absolute;
+right: 10px;
+top: 15px;
+width: 15px;
+
+}
+.everything .todos .todo span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--dark-grayish-blue);
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  display: block;
+
+}
+
+.everything .todos .actions {
+  display: flex;
+  width: 100%;
+  min-height: 45px;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: var(--dark-grayish-blue);
+  font-size: 15px;
+}
+.everything .details {
+  width: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 10px;
+  font-size: 18px;
+  background-color: var(--very-dark-desataured-blue);
+  border-radius: 5px;
+  margin-top: 20px;
+  color: var(--dark-grayish-blue);
+}
+.everything .dragNdrop {
+  color: var(--dark-grayish-blue);
+  font-size: 16px;
+  padding-left: 45px;
+  margin-top: 27px;
+}
+.everything .actions {
+  display: flex;
+  width: 100%;
+  min-height: 45px;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-color: var(--very-dark-desataured-blue);
+  color: var(--dark-grayish-blue);
+  font-size: 15px;
+  position: relative;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-top: -4px;
+}
+.active {
+   background-position: center;
+   background-size: cover;
+   background-size: 80%;
+   background: url('/images/icon-check.svg'), linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+   background-repeat: round;
+   background-size: cover;
+   background-position: right;
+   border: 1px solid var(--very-dark-grayish-blue);
+   background-clip: border-box;
+   background-blend-mode: normal;
+}
+.clearCompleted {
+  cursor: pointer;
+  background-color: var(--dark-grayish-blue);
+  padding: 3px 4px;
+  color: var(--light-grayish-blue);
+  border-radius: 4px;
+}
+/* media for 630px or higher */
+@media (min-width: 530px) {
+  body {
+    display: flex;
+    justify-content: space-around;
+  }
+  main {
+    display: flex;
+    justify-content: space-around;
+  }
+  main .everything {
+    width: 100%;
+    padding-left: 30%;
+
+  }
+  main .image {
+    background-image: url('/images/bg-desktop-dark.jpg');
+  }
+  main .titleAndTime {
+    width: 50%;
+    height: 20px;
+  }
+  main .everything .typing {
+    margin-top: 20px;
+    max-width: 50%;
+    height: 45px;
+  }
+  .everything .todos {
+    max-width: 50%;
+    height: 375px;
+  }
+  .everything .todos .todo {
+    width: 100%;
+    min-height: 45px;
+
+  }
+  .everything .todos .todo p {
+    margin-left: -40px;
+  }
+  .everything .todos .todo img{
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 15px;
+
+  }
+  .everything .todos .todo span {
+    width: 20px;
+    height: 20px;
+
+
+  }
+  .everything .actions {
+    display: flex;
+    max-width: 50%;
+    min-height: 45px;
+
+  }
+  .everything .details {
+    max-width: 50%;
+    max-height: 45px;
+  }
+  .everything .dragNdrop {
+    color: var(--dark-grayish-blue);
+    font-size: 16px;
+    padding-left: 115px;
+    margin-top: 27px;
+  }
+}
